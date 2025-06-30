@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <script>
+      window.onload = function(){
+        let mlt = false;
+        function myjs()
+        {
+          document.getElementById('menu').style.display = "none";
+          var ref = document.createElement("script");
+          ref.type = "application/javascript";
+          if(mlt) ref.src = "multi.js";
+          else ref.src = "singl.js";
+          document.body.appendChild(ref);
+        }
+        document.getElementById('m').addEventListener("click", function(){mlt=true;myjs();});
+        document.getElementById('s').addEventListener("click", function(){myjs();});
+      }
+    </script>
+    <style>
+      #myCanvas{
+        border: solid 4px #3b3b3b;
+        background-color: black;
+      }
+      #menu{
+        height: 200px;
+        width: 300px;
+        position: fixed;
+        top: 200px;
+        left: 350px;
+        color: white;
+        font-size: 40;
+        font-family: Algerian;
+        font-weight: 550;
+        border: dashed 4px aqua;
+      }
+      p{
+        height: 30px;
+        width: 200px;
+        border: solid 3px gray;
+      }
+      p:hover{
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body bgcolor="gray">
+    <canvas id="myCanvas" width="1000" height="600"></canvas>
+    <div id="menu">
+      <center>
+      <br><p id="m">Multiplayer</p>
+      <br><p id="s">Single Player</p>
+    </center>
+  </body>
+</html>
